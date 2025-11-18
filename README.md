@@ -2,6 +2,8 @@
 
 This repository contains the **University of Washington project** I completed with [Professor’s Name], focusing on **visualizing and analyzing biological datasets**. The project integrates datasets from multiple tissues and organs with web-based visualization tools.
 
+> **Note:** Many of the pages in this repository are dummy placeholders in this commit, as I no longer have access to the original final files. The file `realindex.php` represents how the main project page would have looked.
+
 ---
 
 ## Project Overview
@@ -34,7 +36,7 @@ The project includes CSV datasets for different tissues:
 
 | File/Folder | Description |
 |-------------|-------------|
-| `index.php` / `realindex.php` | Main project web pages |
+| `index.php` / `realindex.php` | Main project web pages (`realindex.php` shows how the page would look; `index.php` is a placeholder) |
 | `dataSubmit.html` | Form for submitting new data |
 | `*.php` | Scripts for rendering charts and processing datasets (cortex.php, drg.php, fat.php, etc.) |
 | `chart.js-4.4.7.tgz` | Chart.js library for visualizations |
