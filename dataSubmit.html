@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+		<head>
+			<meta charset="utf-8">
+			<title>Intelligent Forms</title>
+			<link rel="stylesheet" href="css/styles.css" type="text/css" /> 
+			<script type="text/javascript"><!--
+				function updateProgress()
+				{
+
+					var pb = document.getElementById("pb");
+					var cnt = 0;
+					if( (document.getElementById("name").value != "Enter your full name") && (document.getElementById("name").value != "") )
+						cnt++;
+					if((document.getElementById("email").value != "example@domain.com") && (document.getElementById("email").value != "") ) 
+						cnt++;
+					if((document.getElementById("phone").value != "Example: 765-555-1234") && (document.getElementById("phone").value != "") )
+						cnt++;
+					if( document.getElementById("date").value != "" )
+						cnt++;
+					if(document.getElementById("address").value != "")
+						cnt++;
+					if(document.getElementById("postcode").value != "")
+						cnt++;
+					if(document.getElementById("country").value != "" )
+						cnt++;
+					if(document.getElementById("cardNumber").value != "" )
+						cnt++;
+					if(document.getElementById("securityCode").value != "" )
+						cnt++;
+					if(document.getElementById("nameOnCard").value != "")
+						cnt++;
+
+					var flag = false;
+
+					if (document.getElementById("visa").checked)
+						flag = true;
+					else if (document.getElementById("discover").checked)
+						flag = true;
+					else if (document.getElementById("mastercard").checked)
+						flag = true;
+					else if (document.getElementById("amex").checked)
+						flag = true;
+					else
+						flag = false;
+
+					if(flag == true)
+						cnt++;
+
+					pb.value = cnt; 
+				}
+			--></script>
+		</head>
+<body>
+	<h1>Submission Form</h1>
+	<div style="margin-left: 190px;"><span id="progress">Progress:</span><progress value="0" max="11" id="pb"></progress><br/>&nbsp;</div> 
+	<form name="payment" id="payment" action="processForm.php" method="post">
+		<fieldset>
+			<legend>Personal Information</legend>
+			<ol>
+				<li>
+					<label for="date">Date</label>
+					<input id="date" name="date" type="date" required="required" onChange="updateProgress();" />
+				</li>
+				<li>
+					<label for="name">Name</label>
+					<input id="name" name="name" type="text" placeholder="Enter your full name" required="required" autofocus="autofocus" onChange="updateProgress();" />
+				</li>
+				<li>
+					<label for="email">Email</label>
+					<input id="email" name="email" type="email" placeholder="example@domain.com" required="required" onChange="updateProgress();" />
+				</li>
+				<li>
+					<label for="organization">Organization</label>
+					<input id="organization" name="organization" type="text" placeholder="Enter your organization" required="required" autofocus="autofocus" onChange="updateProgress();" />
+				</li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<ol>
+
+			</ol> 
+		</fieldset>
+	
+		<fieldset>
+			<legend>Data Information</legend>
+			<ol>
+				<li>
+					<fieldset>
+						<legend>Drug(s) (names, generic names)</legend>
+						<ol>	
+							<li>
+								<label for="drugs"></label>
+								<textarea id="drugs" name="drugs" rows="3" required="required" onChange="updateProgress();"></textarea>
+							</li>
+						</ol> 
+					</fieldset>
+				</li>
+				<li>
+					<label for="species">Species/Model</label>
+					<input id="species" name="species" type="text" placeholder="Enter the species/model" required="required" autofocus="autofocus" onChange="updateProgress();" />
+				</li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<ol>
+				<li>
+					<label for="dosage" style="font-weight:bold;">Dosage and Administration</label>
+					<br><br>
+					<label for="animal">Animal</label>
+				  <select name="animal" id="animal">
+					<option value="mouse">Mouse</option>
+					<option value="rat">Rat</option>
+					<option value="human">Human</option>
+				  </select>
+					<br>
+					<label for="gender">Gender</label>
+					<input id="gender" name="gender" type="text" placeholder="Enter the gender" required="required" autofocus="autofocus" onChange="updateProgress();" />
+					<label for="age">Age</label>
+					<input id="age" name="age" type="number" required="required" onChange="updateProgress();" />
+				</li>
+				<li>
+					<label for="organ">Organ</label>
+					<input id="organ" name="organ" type="text" placeholder="Enter the organ" required="required" autofocus="autofocus" onChange="updateProgress();" />
+				</li>
+				<li>
+					<label for="extra">Additional Information</label>
+					<textarea id="extra" name="extra" rows="3" required="required" onChange="updateProgress();"></textarea>
+				</li>
+				<li>
+					<label for="dataset">Choose a dataset</label>
+					<input type="file" id="dataset" name="dataset" accept="image/png, image/jpeg" />
+				</li>
+			</ol> 
+		</fieldset>
+		<fieldset>
+			<button type="submit">Proceed</button>
+		</fieldset>
+</form>
+</body>
+</html>

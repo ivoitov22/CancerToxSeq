@@ -1,0 +1,148 @@
+
+html, body, hl, form, fieldset, legend, ol, li {
+	margin: 1;
+	padding: 1;
+}
+
+body {
+	background: #0D98BA;
+	color: white;
+	font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	padding: 20px;
+}
+
+h1 {
+	font-size: 32px;
+	margin-bottom: 20px;
+	color:yellow;
+
+}
+
+form#feedback{
+	background: #8e918f;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px; 
+	border-radius: 5px;
+	counter-reset: fieldsets;
+	padding: 20px;
+	width: 800px;
+}
+
+form#feedback fieldset {
+	border: none;
+	margin-bottom: 5px;
+}
+
+form#feedback fieldset:last-of-type { 
+	margin-bottom: 0;
+}
+
+form#feedback legend {
+	color: yellow;
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+span#progress {
+	color: #333156;
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+
+form#feedback > fieldset> legend:before 
+{ 
+	content: "Step " counter(fieldsets) ": "; 
+	counter-increment: fieldsets;
+}
+
+form#feedback fieldset fieldset legend {
+	color: white;
+	font-size: 13px;
+	font-weight: normal;
+	padding-bottom: 0;
+}
+
+form#feedback ol li {
+	background: #b9cf6a;
+	background: rgba(255,255,255,.3); 
+	border-color: #e3ebc3;
+	border-color: #B2AC88	; 
+	border-style: solid;
+	border-width: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px; 
+	border-radius: 5px;
+	line-height: 30px;
+	list-style: none; 
+	padding: 5px 10px;
+	margin-bottom: 2px;
+}
+form#feedback ol ol li {
+	background: none;
+	border: none;
+	float: left;
+}
+
+form#feedback label {
+	float: left;
+	font-size: 13px;
+	width: 110px;
+}
+
+form#feedback fieldset fieldset label { 
+	background:none no-repeat left 50%; 
+	line-height: 20px;
+	padding: 0 0 0 30px;
+	width: auto;
+}
+form#feedback fieldset fieldset label:hover {
+	cursor: pointer;
+}
+
+form#feedback input:not([type=radio]),
+form#feedback textarea {
+	background: #ffffff;
+	border: none;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border-radius: 3px;
+	font: italic 10px Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif; 
+	outline: none;
+	padding: 5px;
+	width: 400px;
+}
+
+form#feedback input:not([type=submit]):focus,
+form#feedback textarea:focus {
+	background: lightgray;
+}
+
+form#feedback input[type=radio] {
+	float: left;
+	margin-right: 1px;
+}
+
+form#feedback button {
+	background: #0D98BA;
+	border: none;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	color: #ffffff;
+	display: block;
+	font: 18px Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	letter-spacing: 0.5px;
+	margin: auto;
+	padding: 7px 25px;	
+	text-transform:capitalize;
+}
+
+form#feedback button:hover{
+	background: blue;
+	cursor: pointer;
+}
